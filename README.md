@@ -28,6 +28,6 @@ count, profile pictures, etc.
 |Date|Time|Description of Work|
 |---|---|---|
 |08/01/2022|15m|Create repository and identify tasks in readme|
-|08/02/2022| 1h|Create GitHub issues for each of the tasks identified in the readme|
+|08/02/2022| 1h|Create GitHub issues and milestones|
 |---|---|---|
 ||1h 15m||

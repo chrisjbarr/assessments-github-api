@@ -30,5 +30,6 @@ To help reviewers get an understanding of the approach I've taken towards implem
 | ---------- | ------ | ---------------------------------------------- |
 | 08/01/2022 | 15m    | Create repository and identify tasks in readme |
 | 08/02/2022 | 1h     | Create GitHub issues and milestones            |
+| 08/02/2022 | 1h     | issue #1                                       |
 | ---        | ---    | ---                                            |
 |            | 1h 15m |                                                |

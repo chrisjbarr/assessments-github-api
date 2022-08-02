@@ -7,7 +7,7 @@ This repository contains some things that show off use the GitHub user search AP
 To help reviewers get an understanding of the approach I've taken towards implementing this GitHub Search, I'll create GitHub issues to represent the various states the project will be as it is progresses towards completion. I'll also work out of a feature branch per issue, with it's own pull request to `main`. These issues will be grouped into milestones, with each milestone having it's own publicly facing temporary preview site.
 
 - [x] setup: create empty repository and document approach
-- [ ] setup: create github issues to represent a 'real-world' approach to this exercise
+- [X] setup: create github issues to represent a 'real-world' approach to this exercise
 - [ ] setup: scaffold a VueJS 3 app, set up tooling
 - [ ] setup: [https://vitest.dev/](Vitest) with a passing test
 - [ ] setup: request deployments via Netlify with passing builds only
@@ -23,3 +23,11 @@ count, profile pictures, etc.
 - [ ] stretch: implement [Histoire](https://histoire.dev/) for simple states of any ui elements
 - [ ] stretch: implement [Cloudflare Workers](https://workers.cloudflare.com/) to act as a simple proxy between front-end and GitHub API
 - [ ] stretch: swap out vue for something else.. I've never worked with Svelte, so maybe let's try that
+
+## Time Log
+|Date|Time|Description of Work|
+|---|---|---|
+|08/01/2022|15m|Create repository and identify tasks in readme|
+|08/02/2022| 1h|Create GitHub issues for each of the tasks identified in the readme|
+|---|---|---|
+||1h 15m||

@@ -9,7 +9,7 @@ To help reviewers get an understanding of the approach I've taken towards implem
 - [x] setup: create empty repository and document approach
 - [x] setup: create github issues to represent a 'real-world' approach to this exercise
 - [x] setup: scaffold a VueJS 3 app, set up tooling
-- [ ] setup: [https://vitest.dev/](Vitest) with a passing test
+- [x] setup: [https://vitest.dev/](Vitest) with a passing test
 - [ ] setup: request deployments via Netlify with passing builds only
 - [ ] implement: search for users and see a paginated list of results
 - [ ] implement: navigate through the next and previous pages of the paginated results
@@ -30,6 +30,7 @@ To help reviewers get an understanding of the approach I've taken towards implem
 | ---------- | ------ | ---------------------------------------------- |
 | 08/01/2022 | 15m    | Create repository and identify tasks in readme |
 | 08/02/2022 | 1h     | Create GitHub issues and milestones            |
-| 08/02/2022 | 1h     | Complete [issue #1](https://github.com/chrisjbarr/github-search/issues/1)                              |
+| 08/02/2022 | 1h     | Complete [issue #1 - project/dx setup](https://github.com/chrisjbarr/github-search/issues/1)                              |
+| 08/03/2022 | 1h     | Complete [issue #2 - add vitest](https://github.com/chrisjbarr/github-search/issues/2)                              |
 | ---        | ---    | ---                                            |
-|            | 2h 15m |                                                |
+|            | 3h 15m |                                                |

@@ -26,11 +26,12 @@ To help reviewers get an understanding of the approach I've taken towards implem
 
 ## Time Log
 
-| Date       | Time   | Description of Work                            |
-| ---------- | ------ | ---------------------------------------------- |
-| 08/01/2022 | 15m    | Create repository and identify tasks in readme |
-| 08/02/2022 | 1h     | Create GitHub issues and milestones            |
-| 08/02/2022 | 1h     | Complete [issue #1 - project/dx setup](https://github.com/chrisjbarr/github-search/issues/1)                              |
-| 08/03/2022 | 1h     | Complete [issue #2 - add vitest](https://github.com/chrisjbarr/github-search/issues/2)                              |
+| Date       | Time   | Task | Description of Work                            |
+| ---------- | ------ |---|  ---------------------------------------------- |
+| 08/01/2022 | 15m    | N/A | Create repository and identify tasks in readme |
+| 08/02/2022 | 1h     | N/A | Create GitHub issues and milestones            |
+| 08/02/2022 | 1h     | [issue #1 - project/dx setup](https://github.com/chrisjbarr/github-search/issues/1)| Complete |
+| 08/03/2022 | 1h     | [issue #2 - add vitest](https://github.com/chrisjbarr/github-search/issues/2) | Complete |
+| 08/04/2022 | 30m    | [issue #3 - auto deploy pull requests to netlify](https://github.com/chrisjbarr/github-search/issues/2)| Completed auto deploying `main` and pull requests _from_ Netlify via file configuration. May need to switch to GitHub Actions to prevent deployments when tests fail.|
 | ---        | ---    | ---                                            |
-|            | 3h 15m |                                                |
+|            | 3h 45m |                                                |

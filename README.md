@@ -21,7 +21,7 @@ To help reviewers get an understanding of the approach I've taken towards implem
 - [ ] implement: [TanStack Table](https://tanstack.com/table/v8) for tabular pretties and making our lives easier for table-related things
 - [ ] stretch: implement [crypress](https://go.cypress.io/) for simple e2e testing
 - [ ] stretch: implement [Histoire](https://histoire.dev/) for simple states of any ui elements
-- [ ] stretch: implement [Cloudflare Workers](https://workers.cloudflare.com/) to act as a simple proxy between front-end and GitHub API
+- [ ] stretch: implement [Cloudflare Workers](https://workers.cloudflare.com/) or Netlify Function to act as a simple proxy between front-end and GitHub API
 - [ ] stretch: swap out vue for something else.. I've never worked with Svelte, so maybe let's try that
 
 ## Time Log

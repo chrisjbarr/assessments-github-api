@@ -26,16 +26,20 @@ To help reviewers get an understanding of the approach I've taken towards implem
 
 ## Time Log
 
-| Date       | Time   | Task | Description of Work                            |
-| ---------- | ------ |---|  ---------------------------------------------- |
-| 08/01/2022 | 15m    | N/A | Create repository and identify tasks in readme |
-| 08/02/2022 | 1h     | N/A | Create GitHub issues and milestones            |
-| 08/02/2022 | 1h     | [issue #1 - project/dx setup](https://github.com/chrisjbarr/github-search/issues/1)| Complete |
-| 08/03/2022 | 1h     | [issue #2 - add vitest](https://github.com/chrisjbarr/github-search/issues/2) | Complete |
-| 08/04/2022 | 30m    | [issue #3 - auto deploy pull requests to netlify](https://github.com/chrisjbarr/github-search/issues/2)| Completed auto deploying `main` and pull requests _from_ Netlify via file configuration. May need to switch to GitHub Actions to prevent deployments when tests fail.|
-| ---        | ---    | ---                                            |
-|            | 3h 45m |                                                |
+| Date       | Time   | Task                                                                                                    | Description of Work                                                                                                                                                   |
+| ---------- | ------ | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 08/01/2022 | 15m    | N/A                                                                                                     | Create repository and identify tasks in readme                                                                                                                        |
+| 08/02/2022 | 1h     | N/A                                                                                                     | Create GitHub issues and milestones                                                                                                                                   |
+| 08/02/2022 | 1h     | [issue #1 - project/dx setup](https://github.com/chrisjbarr/github-search/issues/1)                     | Complete                                                                                                                                                              |
+| 08/03/2022 | 1h     | [issue #2 - add vitest](https://github.com/chrisjbarr/github-search/issues/2)                           | Complete                                                                                                                                                              |
+| 08/04/2022 | 30m    | [issue #3 - auto deploy pull requests to netlify](https://github.com/chrisjbarr/github-search/issues/2) | Completed auto deploying `main` and pull requests _from_ Netlify via file configuration. May need to switch to GitHub Actions to prevent deployments when tests fail. |
+| ---        | ---    | ---                                                                                                     |
+|            | 3h 45m |                                                                                                         |
 
 ## Build Status
 
 [![Buidl / Test](https://github.com/chrisjbarr/github-search/actions/workflows/node.js.yml/badge.svg)](https://github.com/chrisjbarr/github-search/actions/workflows/node.js.yml)
+
+## Notes from Chris
+
+- For issue #3 - I would have liked to integrate GitHub Actions with Netlify via webhooks and only trigger a deployment when the pull request's build, linting and tests pass. I wasn't able to find a way to do this with Netlify Preview Deployments while browsing their documentation. :( So for now, we're just running the GitHub Action to build and test (linting later?) and letting Netlify automated pull request deployments do their thing. Not ideal, but for a take home project it's good enough - and illustrates my desire to do the right thing.

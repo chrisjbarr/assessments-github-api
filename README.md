@@ -35,7 +35,7 @@ To help reviewers get an understanding of the approach I've taken towards implem
 | 08/04/2022 | 30m    | [issue #3 - auto deploy pull requests to netlify](https://github.com/chrisjbarr/github-search/issues/2) | Completed auto deploying `main` and pull requests _from_ Netlify via file configuration. May need to switch to GitHub Actions to prevent deployments when tests fail. |
 | 08/05/2022 | 30m    | [issue #3 - auto deploy pull requests to netlify](https://github.com/chrisjbarr/github-search/issues/2) | Setup GitHub Action to run build and test - no luck on closer integration with Netlify to prevent failing test builds from deploying to demo previews. |
 | ---        | ---    | ---                                                                                                     |
-|            | 3h 45m |                                                                                                         |
+|            | 4h 15m |                                                                                                         |
 
 ## Build Status
 

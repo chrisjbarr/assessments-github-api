@@ -5,7 +5,7 @@
 [build]
   base = "front-end"
   publish = "dist"
-  command = "npx npm run build"
+  command = "npx npm install && npx npm run build"
 
 [[redirects]]
   from = "/*"

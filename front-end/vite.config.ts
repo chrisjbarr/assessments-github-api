@@ -14,8 +14,17 @@ export default defineConfig({
       directoryAsNamespace: true
     }),
     AutoImport({
-      imports: ['vue', 'vitest'],
+      imports: [
+        'vue',
+        'vitest',
+        '@vueuse/core',
+        {
+          axios: [['default', 'axios']],
+          'vue-query': ['useQuery', 'useQueryClient']
+        }
+      ],
       dts: true,
+      dirs: ['./src/composables/github'],
       eslintrc: {
         enabled: true
       },

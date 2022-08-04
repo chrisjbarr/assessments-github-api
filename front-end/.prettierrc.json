@@ -1,6 +1,6 @@
 {
   "singleQuote": true,
-  "printWidth": 240,
+  "printWidth": 120,
   "trailingComma": "none",
   "importOrder": ["^@vue/(.*)$", "vue(.*)$", "<THIRD_PARTY_MODULES>", "^@core/(.*)$", "^@views/(.*)$", "^[./]"],
   "importOrderSeparation": true,

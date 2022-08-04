@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "GitHub Search - Chris Barr",
+  "short_name": "GSxCB",
   "icons": [
     { "src": "/img/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/img/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }

@@ -16,8 +16,7 @@
     "@vueuse/core": "^9.1.0",
     "axios": "^0.27.2",
     "axios-case-converter": "^0.9.0",
-    "vue": "^3.2.37",
-    "vue-query": "^1.25.2"
+    "vue": "^3.2.37"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^3.3.0",

@@ -7,6 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    GitHubSearch: typeof import('./src/components/GitHub/Search.vue')['default']
+    GitHubSearchHistory: typeof import('./src/components/GitHub/SearchHistory.vue')['default']
+    GitHubSearchResults: typeof import('./src/components/GitHub/SearchResults.vue')['default']
   }
 }

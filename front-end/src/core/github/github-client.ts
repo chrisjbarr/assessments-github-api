@@ -1,14 +1,14 @@
 import applyCaseMiddleware from 'axios-case-converter';
 
+const baseApiUrl: URL = new URL('https://api.github.com');
+
 /**
  * Creates an Axios client that reformats all GitHub response JSON keys from snake case to camel case.
  *
  * I realize this is an extra post processing step in translating GitHub responses, however I felt the added benefit
  * dx of using camelCase throughout the codebase to reference the response keys outweighed this overhead.
- *
- * @returns An Axios client.
  */
-export const getGithubClient = () => applyCaseMiddleware(axios.create());
+const client = applyCaseMiddleware(axios.create());
 
 /**
  * Creates a GitHub API specific search params for the given object, translating it's keys and values
@@ -35,4 +35,22 @@ export const createSearchParams = (searchRequest: any) => {
  * @param instance The string instance that should be snake cased
  * @returns a snake cased version of the string
  */
-const camelToSnakeCase = (instance: string) => instance.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+export const camelToSnakeCase = (instance: string) =>
+  instance.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+
+/**
+ * Invokes a request to the GitHub API to search for users
+ *
+ * @param searchRequest The request settings to be used for for the user search
+ * @returns A SearchApiResponse of type GitHubUser
+ */
+export const searchGitHubUsers = async (searchRequest: SearchApiRequest): Promise<SearchApiResponse<GitHubUser>> => {
+  const searchParams = createSearchParams(searchRequest);
+  const searchUsersUrl = new URL(`/search/users?${searchParams}`, baseApiUrl);
+
+  /**
+   * In an ideal world we're catching errors here as well as validating http response codes
+   * - but this isn't an ideal world. :)
+   */
+  return (await client.get<SearchApiResponse<GitHubUser>>(searchUsersUrl.toString())).data;
+};

@@ -1,6 +1,6 @@
-import { createSearchParams, getGithubClient } from './github-client';
+import { createSearchParams, getGitHubClient } from './github-client';
 
-const client = getGithubClient();
+const client = getGitHubClient();
 const baseApiUrl: URL = new URL('https://api.github.com');
 
 /**

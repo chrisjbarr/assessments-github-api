@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { searchGitHubUsers } from './core/github/search-api.js';
+import { searchGitHubUsers } from './core/github/github-client.js';
 
 const inputDebouceInMs = 800;
 

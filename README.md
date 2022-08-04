@@ -10,7 +10,7 @@ To help reviewers get an understanding of the approach I've taken towards implem
 - [x] setup: create github issues to represent a 'real-world' approach to this exercise
 - [x] setup: scaffold a VueJS 3 app, set up tooling
 - [x] setup: [https://vitest.dev/](Vitest) with a passing test
-- [ ] setup: request deployments via Netlify with passing builds only
+- [x] setup: request deployments via Netlify with passing builds only
 - [ ] implement: search for users and see a paginated list of results
 - [ ] implement: navigate through the next and previous pages of the paginated results
 - [ ] implement: see the total count of search results
@@ -33,6 +33,7 @@ To help reviewers get an understanding of the approach I've taken towards implem
 | 08/02/2022 | 1h     | [issue #1 - project/dx setup](https://github.com/chrisjbarr/github-search/issues/1)                     | Complete                                                                                                                                                              |
 | 08/03/2022 | 1h     | [issue #2 - add vitest](https://github.com/chrisjbarr/github-search/issues/2)                           | Complete                                                                                                                                                              |
 | 08/04/2022 | 30m    | [issue #3 - auto deploy pull requests to netlify](https://github.com/chrisjbarr/github-search/issues/2) | Completed auto deploying `main` and pull requests _from_ Netlify via file configuration. May need to switch to GitHub Actions to prevent deployments when tests fail. |
+| 08/05/2022 | 30m    | [issue #3 - auto deploy pull requests to netlify](https://github.com/chrisjbarr/github-search/issues/2) | Setup GitHub Action to run build and test - no luck on closer integration with Netlify to prevent failing test builds from deploying to demo previews. |
 | ---        | ---    | ---                                                                                                     |
 |            | 3h 45m |                                                                                                         |
 

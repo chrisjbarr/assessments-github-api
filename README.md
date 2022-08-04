@@ -21,16 +21,21 @@ To help reviewers get an understanding of the approach I've taken towards implem
 - [ ] implement: [TanStack Table](https://tanstack.com/table/v8) for tabular pretties and making our lives easier for table-related things
 - [ ] stretch: implement [crypress](https://go.cypress.io/) for simple e2e testing
 - [ ] stretch: implement [Histoire](https://histoire.dev/) for simple states of any ui elements
-- [ ] stretch: implement [Cloudflare Workers](https://workers.cloudflare.com/) to act as a simple proxy between front-end and GitHub API
+- [ ] stretch: implement [Cloudflare Workers](https://workers.cloudflare.com/) or Netlify Function to act as a simple proxy between front-end and GitHub API
 - [ ] stretch: swap out vue for something else.. I've never worked with Svelte, so maybe let's try that
 
 ## Time Log
 
-| Date       | Time   | Description of Work                            |
-| ---------- | ------ | ---------------------------------------------- |
-| 08/01/2022 | 15m    | Create repository and identify tasks in readme |
-| 08/02/2022 | 1h     | Create GitHub issues and milestones            |
-| 08/02/2022 | 1h     | Complete [issue #1 - project/dx setup](https://github.com/chrisjbarr/github-search/issues/1)                              |
-| 08/03/2022 | 1h     | Complete [issue #2 - add vitest](https://github.com/chrisjbarr/github-search/issues/2)                              |
+| Date       | Time   | Task | Description of Work                            |
+| ---------- | ------ |---|  ---------------------------------------------- |
+| 08/01/2022 | 15m    | N/A | Create repository and identify tasks in readme |
+| 08/02/2022 | 1h     | N/A | Create GitHub issues and milestones            |
+| 08/02/2022 | 1h     | [issue #1 - project/dx setup](https://github.com/chrisjbarr/github-search/issues/1)| Complete |
+| 08/03/2022 | 1h     | [issue #2 - add vitest](https://github.com/chrisjbarr/github-search/issues/2) | Complete |
+| 08/04/2022 | 30m    | [issue #3 - auto deploy pull requests to netlify](https://github.com/chrisjbarr/github-search/issues/2)| Completed auto deploying `main` and pull requests _from_ Netlify via file configuration. May need to switch to GitHub Actions to prevent deployments when tests fail.|
 | ---        | ---    | ---                                            |
-|            | 3h 15m |                                                |
+|            | 3h 45m |                                                |
+
+## Build Status
+
+[![Buidl / Test](https://github.com/chrisjbarr/github-search/actions/workflows/node.js.yml/badge.svg)](https://github.com/chrisjbarr/github-search/actions/workflows/node.js.yml)

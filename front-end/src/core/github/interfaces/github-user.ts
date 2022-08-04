@@ -1,8 +1,13 @@
 /**
  * An interface that describes the shape of a GitHub User from the GitHub API User Search.
  *
- * The GitHub contract for a user is snake_case but we're converting all responses from the GitHub Search Api
+ * Note 1: The GitHub contract for a user is snake_case but we're converting all responses from the GitHub Search Api
  * to camelCase - it's a little easier on the eyes at the expense of some overhead.
+ *
+ * Note 2: [The Documentation](https://docs.github.com/en/rest/search#search-users) states that the response schema will
+ * have numeric values for Followers and Following counts, however, I was not able to reproduce this. An example of the
+ * responses we're receiving is at the bottom of this file. The instructions also asked for Star count which is not something
+ * available.
  */
 interface GitHubUser {
   login: string;

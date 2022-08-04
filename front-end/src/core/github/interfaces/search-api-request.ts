@@ -10,17 +10,6 @@ interface SearchApiRequest {
   q: string;
 
   /**
-   * Sorts the results of your query by number of followers or repositories, or when the person joined GitHub.
-   * Default: best match
-   */
-  sort: string;
-
-  /**
-   * Determines whether the first search result returned is the highest number of matches (desc) or lowest number of matches (asc). This parameter is ignored unless you provide sort.
-   */
-  order: string;
-
-  /**
    * The number of results per page (max 100).
    * Default: 100
    */

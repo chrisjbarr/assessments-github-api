@@ -1,6 +1,6 @@
 # GitHub Search
 
-This repository contains some things that show off use the GitHub user search API and attempts to highlight the process I take when working on a project of any size. The live version of the `main` branch can be [seen here](https://cozy-daifuku-117f2f.netlify.app/).
+This repository contains some things that show off the GitHub user search API and attempts to highlight the process I take when working on a project of any size. The live version of the `main` branch can be [seen here](https://cozy-daifuku-117f2f.netlify.app/).
 
 ## Current Build Status
 

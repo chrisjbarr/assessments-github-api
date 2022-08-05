@@ -59,7 +59,9 @@ To help reviewers get an understanding of the approach I've taken towards implem
 
 ## Known Limitations / Bugs
 
+- Not responsive
 - There isn't any error handling around the requests to the GitHup API - sometimes things will break and a refresh of the page is required. =/
   - If there are more than 10 requests in a minute, GitHub will return a `403` "API rate limit exceeded for [your ip address]."
   - If you attempt to paginate beyond 1,000 records in the UI, GitHub will return a `422` "Only the first 1000 search results are available"
 - There's probably some pagination math bugs and some other unknowns - There is not a lot of unit tests nor did I have a lot of time to really try to break the UI
+

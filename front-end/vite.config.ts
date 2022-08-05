@@ -11,6 +11,7 @@ export default defineConfig({
     vue(),
     Components({
       dts: true,
+      deep: true,
       directoryAsNamespace: true
     }),
     AutoImport({
@@ -24,7 +25,7 @@ export default defineConfig({
         }
       ],
       dts: true,
-      dirs: ['./src/composables/github'],
+      dirs: ['./src/composables/github', './src/core/provider-keys'],
       eslintrc: {
         enabled: true
       },

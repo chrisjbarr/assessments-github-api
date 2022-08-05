@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { searchGitHubUsers } from './core/github/github-client.js';
+import { githubSearchInputDebounceInMsProviderKey } from './core/provider-keys/app.js';
 
 const inputDebouceInMs = 800;
 
@@ -49,10 +50,24 @@ const handlePreviousClick = () => {
 const handleNextClick = () => {
   searchRequest.value.page++;
 };
+
+provide(githubSearchInputDebounceInMsProviderKey, inputDebouceInMs);
 </script>
 
 <template>
-  <div id="container">
+  <div class="flex h-screen">
+    <LayoutSidebar />
+    <div class="flex flex-1 flex-col overflow-hidden">
+      <LayoutHeader />
+      <main class="flex-1 overflow-y-auto overflow-x-hidden bg-gray-100">
+        <div class="mx-auto p-4">
+          <GitHubSearchResults />
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- <div id="container">
     <h1>Search the Hubz</h1>
     <p>
       Use the search box below to search for some users in GitHub. As for looksies and feelzies - have no fear, a
@@ -111,30 +126,5 @@ const handleNextClick = () => {
       </table>
     </div>
     <div v-else-if="searchResults?.totalCount === 0">No results were found for {{ searchRequest.q }}</div>
-  </div>
+  </div> -->
 </template>
-
-<style scoped>
-#container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 955px;
-}
-.avatar {
-  height: auto;
-  width: 32px;
-}
-.avatar-user {
-  border-radius: 50%;
-}
-
-#previous-button {
-  float: left;
-}
-#next-button {
-  float: right;
-}
-input[type='number'] {
-  width: 32px;
-}
-</style>

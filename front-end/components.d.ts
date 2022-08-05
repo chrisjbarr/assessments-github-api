@@ -7,7 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    GitHubSearch: typeof import('./src/components/GitHub/Search.vue')['default']
     GitHubSearchHistory: typeof import('./src/components/GitHub/SearchHistory.vue')['default']
     GitHubSearchInput: typeof import('./src/components/GitHub/SearchInput.vue')['default']
     GitHubSearchResults: typeof import('./src/components/GitHub/SearchResults.vue')['default']

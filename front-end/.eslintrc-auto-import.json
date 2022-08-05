@@ -36,7 +36,6 @@
     "extendRef": true,
     "getCurrentInstance": true,
     "getCurrentScope": true,
-    "githubSearchInputDebounceInMsProviderKey": true,
     "h": true,
     "ignorableWatch": true,
     "inject": true,

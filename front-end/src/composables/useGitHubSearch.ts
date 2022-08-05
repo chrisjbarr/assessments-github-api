@@ -48,11 +48,20 @@ const lowerBoundRecordNumber = computed(() => {
   return searchRequest.value.perPage * searchRequest.value.page - searchRequest.value.perPage + 1;
 });
 
+/**
+ * this is sketchy
+ */
 const upperBoundRecordNumber = computed(() => {
-  let upperCounter = lowerBoundRecordNumber.value + searchRequest.value.perPage - 1;
+  const recordCount = searchResults?.value?.totalCount ?? 0;
 
-  if (upperCounter > searchResults.value.totalCount) {
-    upperCounter = searchResults.value.totalCount;
+  if (recordCount === 0) {
+    return 0;
+  }
+
+  let upperCounter: number = lowerBoundRecordNumber.value + searchRequest.value.perPage - 1;
+
+  if (upperCounter > recordCount) {
+    upperCounter = recordCount;
   }
 
   return upperCounter;

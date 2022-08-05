@@ -57,8 +57,9 @@ To help reviewers get an understanding of the approach I've taken towards implem
 
 - For [issues 4 - 8] - I left a good amount [of comments in the pull request](https://github.com/chrisjbarr/github-search/pull/18) but the main thing I wanted to call out here was the instructions requested showing follower/follows/star counts for each user retrieved - however the GitHub REST API response for this did not have these values. To get them I would have needed to n+3 called out to GitHub for this data (or allow the user to infer them via an explicit link-click in the UI to make a request to get the data). Had I used the GraphQL API I probably could have included this in the one and only query request, but was already down the path of REST API and didn't want to switch over.
 
-## Known Limitations
+## Known Limitations / Bugs
 
 - There isn't any error handling around the requests to the GitHup API - sometimes things will break and a refresh of the page is required. =/
   - If there are more than 10 requests in a minute, GitHub will return a `403` "API rate limit exceeded for [your ip address]."
   - If you attempt to paginate beyond 1,000 records in the UI, GitHub will return a `422` "Only the first 1000 search results are available"
+- There's probably some pagination math bugs and some other unknowns - There is not a lot of unit tests nor did I have a lot of time to really try to break the UI

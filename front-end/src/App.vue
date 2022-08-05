@@ -1,57 +1,55 @@
 <script setup lang="ts">
-import { searchGitHubUsers } from './core/github/github-client.js';
-import { githubSearchInputDebounceInMsProviderKey } from './core/provider-keys/app.js';
-
-const inputDebouceInMs = 800;
+// import { searchGitHubUsers } from './core/github/github-client.js';
+// import { githubSearchInputDebounceInMsProviderKey } from './core/provider-keys/app.js';
 
 /**
  * I couldn't come up with a better way to debounce an entire object, and now I'm questioning all my life's
  * decisions that led up to this moment.
  */
-const keywordsInput = ref('');
-const pageInput = ref(1);
-const debouncedKeywordsInput = refDebounced(keywordsInput, inputDebouceInMs);
-const debouncedPageInput = refDebounced(pageInput, inputDebouceInMs);
+// const keywordsInput = ref('');
+// const pageInput = ref(1);
+// const debouncedKeywordsInput = refDebounced(keywordsInput, inputDebouceInMs);
+// const debouncedPageInput = refDebounced(pageInput, inputDebouceInMs);
 
-const searchRequest = ref({
-  q: debouncedKeywordsInput,
-  perPage: 100,
-  page: debouncedPageInput
-});
+// const searchRequest = ref({
+//   q: debouncedKeywordsInput,
+//   perPage: 100,
+//   page: debouncedPageInput
+// });
 
-const searchResults = ref<SearchApiResponse<GitHubUser>>();
+// const searchResults = ref<SearchApiResponse<GitHubUser>>();
 
-watchEffect(async () => {
-  if (searchRequest.value.q !== '') {
-    searchResults.value = await searchGitHubUsers(searchRequest.value);
-  }
-});
+// watchEffect(async () => {
+//   if (searchRequest.value.q !== '') {
+//     searchResults.value = await searchGitHubUsers(searchRequest.value);
+//   }
+// });
 
-const isPreviousResultsAvailable = computed(() => {
-  return searchRequest.value.page > 1;
-});
+// const isPreviousResultsAvailable = computed(() => {
+//   return searchRequest.value.page > 1;
+// });
 
-const isNextResultsAvailable = computed(() => {
-  return searchRequest.value.page < totalPages.value;
-});
+// const isNextResultsAvailable = computed(() => {
+//   return searchRequest.value.page < totalPages.value;
+// });
 
-const totalPages = computed(() => {
-  if (searchResults.value !== null) {
-    return Math.ceil(searchResults.value!.totalCount / searchRequest.value.perPage);
-  }
+// const totalPages = computed(() => {
+//   if (searchResults.value !== null) {
+//     return Math.ceil(searchResults.value!.totalCount / searchRequest.value.perPage);
+//   }
 
-  return 0;
-});
+//   return 0;
+// });
 
-const handlePreviousClick = () => {
-  searchRequest.value.page--;
-};
+// const handlePreviousClick = () => {
+//   searchRequest.value.page--;
+// };
 
-const handleNextClick = () => {
-  searchRequest.value.page++;
-};
+// const handleNextClick = () => {
+//   searchRequest.value.page++;
+// };
 
-provide(githubSearchInputDebounceInMsProviderKey, inputDebouceInMs);
+provide(githubSearchInputDebounceInMsProviderKey, 800);
 </script>
 
 <template>

@@ -2,9 +2,9 @@
 
 <template>
   <div class="flex">
-    <div class="z-30 w-64 transition duration-300 lg:static">
-      <div class="flex h-14 border-b border-b-brand-black-900 p-2 align-middle text-2xl">
-        <h1>GitHub API Search</h1>
+    <div class="w-64">
+      <div class="h-14 bg-brand-black-500 align-middle">
+        <h1 class="p-2.5 text-2xl font-bold text-white">GitHub API Search</h1>
       </div>
 
       <div class="p-2">

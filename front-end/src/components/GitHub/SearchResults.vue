@@ -9,7 +9,6 @@ const debouncedPageInput = refDebounced(pageInput, inputDebounceInMs);
   <div class="-my-2 overflow-x-auto py-2">
     <div class="flex items-center justify-between">
       <div class="flex items-center space-x-4">
-        <div>Displaying 2 of 2 results.</div>
         <select class="h-12">
           <option value="10">10 results per page</option>
           <option value="25">25 results per page</option>
@@ -53,33 +52,41 @@ const debouncedPageInput = refDebounced(pageInput, inputDebounceInMs);
       </div>
     </div>
 
-    <table class="my-4 rounded-lg py-2 shadow">
-      <thead>
-        <tr>
-          <th
-            class="whitespace-nowrap border-b border-gray-200 bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-500"
-          >
-            Profile Details
-          </th>
-          <th
-            class="w-full border-b border-gray-200 bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-500"
-          >
-            Profile Links
-          </th>
-        </tr>
-      </thead>
+    <div class="my-4 rounded-lg py-2 shadow">
+      <table>
+        <thead>
+          <tr>
+            <th
+              class="whitespace-nowrap border-b border-gray-200 bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-500"
+            >
+              Profile Details
+            </th>
+            <th
+              class="w-full border-b border-gray-200 bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-500"
+            >
+              Profile Links
+            </th>
+          </tr>
+        </thead>
 
-      <tbody class="bg-white">
-        <tr>
-          <td class="border-b border-gray-200 px-6 py-4 align-top">
-            <div class="flex items-center">
-              <div></div>
-            </div>
-          </td>
+        <tbody class="bg-white">
+          <tr>
+            <td class="border-b border-gray-200 px-6 py-4 align-top">
+              <div class="flex items-center">
+                <div></div>
+              </div>
+            </td>
 
-          <td class="whitespace-nowrap border-b border-gray-200 px-6 py-4 align-top uppercase">Test</td>
-        </tr>
-      </tbody>
-    </table>
+            <td class="whitespace-nowrap border-b border-gray-200 px-6 py-4 align-top uppercase">Test</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td colspan="2" class="pt-2 pl-2 text-sm">Displaying 2 of 2 results.</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
   </div>
 </template>

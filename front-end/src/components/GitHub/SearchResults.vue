@@ -1,25 +1,29 @@
 <script setup lang="ts">
-const inputDebounceInMs = inject(githubSearchInputDebounceInMsProviderKey, 600);
+const { searchResults, searchRequest, pageInput, totalPages, lowerBoundRecordNumber, upperBoundRecordNumber } =
+  useGitHubSearch();
 
-const pageInput = ref(1);
-const debouncedPageInput = refDebounced(pageInput, inputDebounceInMs);
+function viewProfileInGitHub(url: string) {
+  window.open(url, '_blank');
+}
 </script>
 
 <template>
-  <div class="-my-2 overflow-x-auto py-2">
+  <div v-if="searchResults && searchResults?.totalCount > 0" class="-my-2 overflow-x-auto py-2">
     <div class="flex items-center justify-between">
       <div class="flex items-center space-x-4">
-        <select class="h-12">
+        <select v-model="searchRequest.perPage" class="h-12 rounded-lg">
           <option value="10">10 results per page</option>
           <option value="25">25 results per page</option>
           <option value="50">50 results per page</option>
           <option value="100">100 results per page</option>
         </select>
       </div>
-      <div class="flex">Page 1 of 1</div>
+      <div class="flex">Page {{ searchRequest.page }} of {{ totalPages }}</div>
       <div class="flex items-center align-middle">
         <button
-          class="inline-flex h-12 items-center rounded rounded-r-none border border-brand-black-200 bg-brand-black-200 px-4 text-center text-white transition-colors hover:bg-brand-black-300"
+          :disabled="searchRequest.page <= 1"
+          class="inline-flex h-12 items-center rounded-lg rounded-r-none border border-brand-black-200 bg-brand-black-200 px-4 text-center text-white transition-colors hover:bg-brand-black-300"
+          @click="searchRequest.page--"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +39,9 @@ const debouncedPageInput = refDebounced(pageInput, inputDebounceInMs);
         </button>
         <input v-model="pageInput" type="number" class="b-brand-black-200 inline-flex h-12 w-20 items-center border" />
         <button
-          class="inline-flex h-12 items-center rounded rounded-l-none border border-brand-black-200 bg-brand-black-200 px-4 text-center text-white transition-colors hover:bg-brand-black-300"
+          :disabled="searchRequest.page >= totalPages"
+          class="inline-flex h-12 items-center rounded-lg rounded-l-none border border-brand-black-200 bg-brand-black-200 px-4 text-center text-white transition-colors hover:bg-brand-black-300"
+          @click="searchRequest.page++"
         >
           Next
           <svg
@@ -53,40 +59,56 @@ const debouncedPageInput = refDebounced(pageInput, inputDebounceInMs);
     </div>
 
     <div class="my-4 rounded-lg py-2 shadow">
-      <table>
+      <table class="w-full">
         <thead>
           <tr>
             <th
-              class="whitespace-nowrap border-b border-gray-200 bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-500"
+              class="w-full whitespace-nowrap border-b border-gray-200 bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-500"
             >
-              Profile Details
-            </th>
-            <th
-              class="w-full border-b border-gray-200 bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase leading-4 tracking-wider text-gray-500"
-            >
-              Profile Links
+              Details
             </th>
           </tr>
         </thead>
 
         <tbody class="bg-white">
-          <tr>
+          <tr
+            v-for="user in searchResults.items"
+            :key="user.nodeId"
+            class="cursor-pointer transition-all duration-200 hover:bg-gray-100"
+            @click="viewProfileInGitHub(user.htmlUrl)"
+          >
             <td class="border-b border-gray-200 px-6 py-4 align-top">
               <div class="flex items-center">
-                <div></div>
+                <div class="h-12 w-12 flex-shrink-0">
+                  <img
+                    class="h-12 w-12 rounded-full"
+                    :src="user.avatarUrl"
+                    :alt="`Avatar for GitHub user: ${user.login}`"
+                  />
+                </div>
+
+                <div class="ml-4">
+                  <div class="text-sm font-medium leading-5 text-gray-900">
+                    {{ user.login }}
+                  </div>
+                  <div class="text-sm leading-5 text-gray-400">GitHub Id: {{ user.id }}</div>
+                </div>
               </div>
             </td>
-
-            <td class="whitespace-nowrap border-b border-gray-200 px-6 py-4 align-top uppercase">Test</td>
           </tr>
         </tbody>
 
         <tfoot>
           <tr>
-            <td colspan="2" class="pt-2 pl-2 text-sm">Displaying 2 of 2 results.</td>
+            <td colspan="2" class="pt-2 pl-2 text-sm">
+              Displaying {{ lowerBoundRecordNumber }} to {{ upperBoundRecordNumber }} of
+              {{ searchResults.totalCount }} results.
+            </td>
           </tr>
         </tfoot>
       </table>
     </div>
   </div>
+  <div v-else-if="searchResults && searchResults.totalCount === 0">No results were found for {{ searchRequest.q }}</div>
+  <div v-else>User the input box above to search for a GitHub user.</div>
 </template>

@@ -25,7 +25,7 @@ export default defineConfig({
         }
       ],
       dts: true,
-      dirs: ['./src/composables/github', './src/core/provider-keys'],
+      dirs: ['./src/composables', './src/core/provider-keys'],
       eslintrc: {
         enabled: true
       },

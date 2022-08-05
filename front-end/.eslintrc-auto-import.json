@@ -167,6 +167,7 @@
     "useFullscreen": true,
     "useGamepad": true,
     "useGeolocation": true,
+    "useGitHubSearch": true,
     "useIdle": true,
     "useImage": true,
     "useInfiniteScroll": true,

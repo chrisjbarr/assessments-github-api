@@ -1,15 +1,7 @@
 <script setup lang="ts">
-const inputDebounceInMs = inject(githubSearchInputDebounceInMsProviderKey, 600);
-
-const keywordsInput = ref('');
-const debouncedKeywordsInput = refDebounced(keywordsInput, inputDebounceInMs);
+const { keywordsInput } = useGitHubSearch();
 </script>
 
 <template>
-  <input
-    v-model="keywordsInput"
-    class="rounded-lg w-full"
-    type="text"
-    placeholder="Search Users"
-  />
+  <input v-model="keywordsInput" class="w-full rounded-lg" type="text" placeholder="Search Users" />
 </template>
